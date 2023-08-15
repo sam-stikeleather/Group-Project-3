@@ -7,9 +7,18 @@ import { QUERY_USER } from '../utils/queries';
 function OrderHistory() {
   const { data } = useQuery(QUERY_USER);
   let user;
+  let totalSpent = 0;
 
   if (data) {
     user = data.user;
+  }
+
+  if (user) {
+    user.orders.forEach(order => {
+      order.products.forEach(product => {
+        totalSpent += product.price;
+      });
+    });
   }
 
   return (
@@ -22,6 +31,9 @@ function OrderHistory() {
             <h2>
               Order History for {user.firstName} {user.lastName}
             </h2>
+            <div>
+              <h3>Total Spent: ${totalSpent.toFixed(2)}</h3>
+            </div>
             {user.orders.map((order) => (
               <div key={order._id} className="my-2">
                 <h3>
