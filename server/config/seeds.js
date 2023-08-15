@@ -135,7 +135,7 @@ db.once('open', async () => {
       description: 'Two eggs of your preferred style, a choice of bacon or sausage, as well as a choice of four pancakes or waffles.',
       image: '#',
       price: '7.00',
-      quantity: '#'
+      quantity: 100
     },
     {
       name: 'Waffle House Breakfast',
@@ -143,7 +143,7 @@ db.once('open', async () => {
       description: 'A country fried steak with two eggs of your preferred style with either diced potatoes or hash browns.',
       image: '#',
       price: '9.00',
-      quantity: '#'
+      quantity: 100
     },
     {
       name: 'Philly Omelet',
@@ -151,7 +151,7 @@ db.once('open', async () => {
       description: 'A Philly cheesesteak omelet with your choice of cheese and peppers, served with toast or a biscuit.',
       image: '#',
       price: '8.00',
-      quantity: '#'
+      quantity: 100
     },
     {
       name: 'Krabby Patty',
@@ -159,7 +159,7 @@ db.once('open', async () => {
       description: 'Just a well made burger with cheese, 100% USDA approved beef, pickles, tomatoes, lettuce and a side of fries.',
       image: '#',
       price: '9.00',
-      quantity: '#'
+      quantity: 100
     },
     {
       name: 'Wings',
@@ -167,35 +167,35 @@ db.once('open', async () => {
       description: 'KFC',
       image: '#',
       price: '12.00',
-      quantity: '#'
+      quantity: 100
     },{
       name: 'BLT Macaroni Salad',
       category: categories[1]._id,
       description: 'Bacon, lettuce, tomato, salad',
       image: '#',
       price: '8.00',
-      quantity: '#'
+      quantity: 100
     },{
       name: 'Steak and Taters',
       category: categories[2]._id,
       description: "A beef steak served with a loaded baked potato and your choice of side salad or soup.",
       image: '#',
       price: '23.00',
-      quantity: '#'
+      quantity: 100
     },{
       name: 'Krusty Krab Pizza',
       category: categories[2]._id,
       description: 'A 16 inch New York style pepperoni pizza for everyone to enjoy!',
       image: '#',
       price: '18.00',
-      quantity: '#'
+      quantity: 100
     },{
       name: 'Lasagna',
       category: categories[2]._id,
       description: 'Lasagna',
       image: '#',
       price: '14.00',
-      quantity: '#'
+      quantity: 100
     },
     {
       name: 'Water',
@@ -203,7 +203,7 @@ db.once('open', async () => {
       description: 'Water',
       image: '#',
       price: '9.00',
-      quantity: '#'
+      quantity: 100
     },
     {
       name: 'Kelp Shake',
@@ -211,7 +211,7 @@ db.once('open', async () => {
       description: 'Kelp Shake ',
       image: '#',
       price: '2.00',
-      quantity: '#'
+      quantity: 100
     },
     {
       name: 'Sprite',
@@ -219,7 +219,7 @@ db.once('open', async () => {
       description: 'lemon-lime soda',
       image: '#',
       price: '2.00',
-      quantity: '#'
+      quantity: 100
     },
     {
       name: 'Dr. Pepper',
@@ -227,7 +227,7 @@ db.once('open', async () => {
       description: 'Dr. Pepper',
       image: '#',
       price: '2.00',
-      quantity: '#'
+      quantity: 100
     },
     {
       name: 'Onion Rings',
@@ -235,7 +235,7 @@ db.once('open', async () => {
       description: 'Funyuns',
       image: '#',
       price: '3.50',
-      quantity: '#'
+      quantity: 100
     },
   ]);
 
