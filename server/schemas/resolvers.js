@@ -102,6 +102,25 @@ const resolvers = {
         const order = new Order({ products });
 
         await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+        
+        const orderTotal = products.reduce(
+          (total, product) => total + product.price,
+          0
+        );
+
+        let userSpending = await userSpending.findOne ({ userId: context.user._id });
+        if (!userSpending) {
+          userSpending = await userSpending({ userId: context.user._id});
+        }
+
+        userSpending.totalSpent += orderTotal;
+
+        if (userSpending.totalSpent >= 100) {
+          const rewards = new rewards({ userId: context.user._id, amount: 5 });
+          await rewards.save();
+        }
+
+        await userSpending.save();
 
         return order;
       }
