@@ -133,7 +133,7 @@ db.once('open', async () => {
       name: 'Bacon And Eggs',
       category: categories[0]._id,
       description: 'Two eggs of your preferred style, a choice of bacon or sausage, as well as a choice of four pancakes or waffles.',
-      image: '#',
+      image: 'baconeggs.jpg',
       price: '7.00',
       quantity: '#'
     },
@@ -141,7 +141,7 @@ db.once('open', async () => {
       name: 'Waffle House Breakfast',
       category: categories[0]._id,
       description: 'A country fried steak with two eggs of your preferred style with either diced potatoes or hash browns.',
-      image: '#',
+      image: 'wafflehouse.jpg',
       price: '9.00',
       quantity: '#'
     },
@@ -149,7 +149,7 @@ db.once('open', async () => {
       name: 'Philly Omelet',
       category: categories[0]._id,
       description: 'A Philly cheesesteak omelet with your choice of cheese and peppers, served with toast or a biscuit.',
-      image: '#',
+      image: 'phillyomelet',
       price: '8.00',
       quantity: '#'
     },
@@ -157,7 +157,7 @@ db.once('open', async () => {
       name: 'Krabby Patty',
       category: categories[1]._id,
       description: 'Just a well made burger with cheese, 100% USDA approved beef, pickles, tomatoes, lettuce and a side of fries.',
-      image: '#',
+      image: 'krabbypatty.jpg',
       price: '9.00',
       quantity: '#'
     },
@@ -165,35 +165,35 @@ db.once('open', async () => {
       name: 'Wings',
       category: categories[1]._id,
       description: 'KFC',
-      image: '#',
+      image: 'KFC-chicken-wings.jpg',
       price: '12.00',
       quantity: '#'
-    },{
-      name: 'BLT Macaroni Salad',
+    }, {
+      name: 'BLT Salad',
       category: categories[1]._id,
       description: 'Bacon, lettuce, tomato, salad',
-      image: '#',
+      image: 'bltsalad.jpg',
       price: '8.00',
       quantity: '#'
-    },{
+    }, {
       name: 'Steak and Taters',
       category: categories[2]._id,
       description: "A beef steak served with a loaded baked potato and your choice of side salad or soup.",
-      image: '#',
+      image: 'steaktaters.jpg',
       price: '23.00',
       quantity: '#'
-    },{
+    }, {
       name: 'Krusty Krab Pizza',
       category: categories[2]._id,
       description: 'A 16 inch New York style pepperoni pizza for everyone to enjoy!',
-      image: '#',
+      image: 'krustykrabpizza.jpg',
       price: '18.00',
       quantity: '#'
-    },{
+    }, {
       name: 'Lasagna',
       category: categories[2]._id,
       description: 'Lasagna',
-      image: '#',
+      image: 'lasagna.jpg',
       price: '14.00',
       quantity: '#'
     },
@@ -201,7 +201,7 @@ db.once('open', async () => {
       name: 'Water',
       category: categories[3]._id,
       description: 'Water',
-      image: '#',
+      image: 'water.jpg',
       price: '9.00',
       quantity: '#'
     },
@@ -209,7 +209,7 @@ db.once('open', async () => {
       name: 'Kelp Shake',
       category: categories[3]._id,
       description: 'Kelp Shake ',
-      image: '#',
+      image: 'kelpshake.jpg',
       price: '2.00',
       quantity: '#'
     },
@@ -217,7 +217,7 @@ db.once('open', async () => {
       name: 'Sprite',
       category: categories[3]._id,
       description: 'lemon-lime soda',
-      image: '#',
+      image: 'sprite.jpg',
       price: '2.00',
       quantity: '#'
     },
@@ -225,7 +225,7 @@ db.once('open', async () => {
       name: 'Dr. Pepper',
       category: categories[3]._id,
       description: 'Dr. Pepper',
-      image: '#',
+      image: 'dr.pepper.jpg',
       price: '2.00',
       quantity: '#'
     },
@@ -233,8 +233,24 @@ db.once('open', async () => {
       name: 'Onion Rings',
       category: categories[4]._id,
       description: 'Funyuns',
-      image: '#',
+      image: 'onionrings.jpg',
       price: '3.50',
+      quantity: '#'
+    },
+    {
+      name: 'Mac and Cheese',
+      category: categories[4]._id,
+      description: 'Mac and Cheese',
+      image: 'macandcheese.jpg',
+      price: '4.00',
+      quantity: '#'
+    },
+    {
+      name: 'French Fries',
+      category: categories[4]._id,
+      description: 'Choice of sweet potato, waffle, and curly.',
+      image: 'frenchfries.jpg',
+      price: '2.50',
       quantity: '#'
     },
   ]);
