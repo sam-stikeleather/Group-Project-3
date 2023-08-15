@@ -108,14 +108,15 @@ const resolvers = {
           0
         );
 
-        let userSpending = await userSpending.findOne ({ userId: context.user._id });
+        let userSpending = await UserSpending.findOne ({ userId: context.user._id });
         if (!userSpending) {
-          userSpending = await userSpending({ userId: context.user._id});
+          userSpending = new UserSpending({ userId: context.user._id});
         }
 
         userSpending.totalSpent += orderTotal;
 
         if (userSpending.totalSpent >= 100) {
+          const rewardsEarned = Math.floor(userSpending.totalSpent / 100) * 5;
           const rewards = new rewards({ userId: context.user._id, amount: 5 });
           await rewards.save();
         }
