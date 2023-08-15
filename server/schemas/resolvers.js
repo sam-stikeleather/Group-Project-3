@@ -1,7 +1,8 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Category, Order, UserSpending, Rewards } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+
 
 const resolvers = {
   Query: {
@@ -102,22 +103,22 @@ const resolvers = {
         const order = new Order({ products });
 
         await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
-        
+
         const orderTotal = products.reduce(
           (total, product) => total + product.price,
           0
         );
 
-        let userSpending = await UserSpending.findOne ({ userId: context.user._id });
+        let userSpending = await UserSpending.findOne({ userId: context.user._id });
         if (!userSpending) {
-          userSpending = new UserSpending({ userId: context.user._id});
+          userSpending = new UserSpending({ userId: context.user._id });
         }
 
         userSpending.totalSpent += orderTotal;
 
         if (userSpending.totalSpent >= 100) {
           const rewardsEarned = Math.floor(userSpending.totalSpent / 100) * 5;
-          const rewards = new rewards({ userId: context.user._id, amount: 5 });
+          const rewards = new Rewards({ userId: context.user._id, amount: rewardsEarned });
           await rewards.save();
         }
 
@@ -128,6 +129,7 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });
