@@ -37,7 +37,7 @@ db.once('open', async () => {
       name: 'Philly Omelet',
       category: categories[0]._id,
       description: 'A Philly cheesesteak omelet with your choice of cheese and peppers, served with toast or a biscuit.',
-      image: 'phillyomelet',
+      image: 'phillyomelet2.jpg',
       price: '8.00',
       quantity: 100
     },
@@ -56,7 +56,7 @@ db.once('open', async () => {
       image: 'KFC-chicken-wings.jpg',
       price: '12.00',
       quantity: 100
-    }, 
+    },
     {
       name: 'BLT Salad',
       category: categories[1]._id,
@@ -64,7 +64,7 @@ db.once('open', async () => {
       image: 'bltsalad.jpg',
       price: '8.00',
       quantity: 100
-    }, 
+    },
     {
       name: 'Steak and Taters',
       category: categories[2]._id,
@@ -72,7 +72,7 @@ db.once('open', async () => {
       image: 'steaktaters.jpg',
       price: '23.00',
       quantity: 100
-    }, 
+    },
     {
       name: 'Krusty Krab Pizza',
       category: categories[2]._id,
@@ -80,7 +80,7 @@ db.once('open', async () => {
       image: 'krustykrabpizza.jpg',
       price: '18.00',
       quantity: 100
-    }, 
+    },
     {
       name: 'Lasagna',
       category: categories[2]._id,
