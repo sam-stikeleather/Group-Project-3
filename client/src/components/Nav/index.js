@@ -31,7 +31,7 @@ function Nav() {
           </li>
           <li className="mx-1">
             <Link to="/login">
-              Login 
+              Login 👤
             </Link>
           </li>
         </ul>
@@ -43,7 +43,7 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">🍳</span>
+          <span role="img" aria-label="shopping bag"></span>
           Golden Spatula
         </Link>
       </h1>
