@@ -14,6 +14,6 @@ const userSpendingSchema = new Schema({
   },
 });
 
-const UserSpending = mongoose.model('UserSpending', userSpendingSchema);
+const UserSpending = mongoose.model('UserSpending', userSpendingSchema, 'userspendings');
 
 module.exports = UserSpending;
