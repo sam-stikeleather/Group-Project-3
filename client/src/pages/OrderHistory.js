@@ -8,7 +8,6 @@ function OrderHistory() {
   const { data, loading, error } = useQuery(QUERY_USER);
   let user;
   let totalSpent = 0;
-  let rewardsEarned = 0;
 
   if (loading) {
     return <p>Loading...</p>;
@@ -29,7 +28,6 @@ function OrderHistory() {
       });
     });
 
-    rewardsEarned = Math.floor(totalSpent / 100) * 5;
   }
 
   return (
@@ -44,7 +42,6 @@ function OrderHistory() {
             </h2>
             <div>
               <h3>Total Spent: ${totalSpent.toFixed(2)}</h3>
-              <h3>Rewards Earned: ${rewardsEarned}</h3>
             </div>
             {user.orders.map((order) => (
               <div key={order._id} className="my-2">

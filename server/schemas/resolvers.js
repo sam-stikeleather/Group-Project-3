@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order, UserSpending, Rewards } = require('../models');
+const { User, Product, Category, Order, UserSpending } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -98,37 +98,35 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ products });
-
-        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
-
-        const orderTotal = products.reduce(
-          (total, product) => total + product.price,
-          0
-        );
-
-        let userSpending = await UserSpending.findOne({ userId: context.user._id });
-        if (!userSpending) {
-          userSpending = new UserSpending({ userId: context.user._id });
+    
+        try {
+          await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+    
+          const orderTotal = products.reduce(
+            (total, product) => total + product.price,
+            0
+          );
+    
+          let userSpending = await UserSpending.findOne({ userId: context.user._id });
+          if (!userSpending) {
+            userSpending = new UserSpending({ userId: context.user._id });
+          }
+    
+          userSpending.totalSpent += orderTotal;
+          await userSpending.save();
+    
+          return order;
+        } catch (error) {
+          console.error("An error occurred during order processing:", error);
+          throw error;
         }
-
-        userSpending.totalSpent += orderTotal;
-
-        if (userSpending.totalSpent >= 100) {
-          const rewardsEarned = Math.floor(userSpending.totalSpent / 100) * 5;
-          const rewards = new Rewards({ userId: context.user._id, amount: rewardsEarned });
-          await rewards.save();
-        }
-
-        await userSpending.save();
-
-        return order;
       }
-
+    
       throw new AuthenticationError('Not logged in');
     },
+    
     
     updateUser: async (parent, args, context) => {
       if (context.user) {
