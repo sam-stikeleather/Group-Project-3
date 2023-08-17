@@ -12,10 +12,16 @@ N/A
 
 The website can be accessed here: https://immense-river-45225-27301b71a076.herokuapp.com/
 
-On page load you will be able to 
+On page load you will be able to see available items that are instock as well as the option to either sign-up or login. You can add items to your cart that will appear in the top right corner. It will display the item you selected, the amount you are getting, the price, and the total for all the items in your cart.
 
-Sam Jake Katie
+In order to checkout and recieve the items you must be logged in!
 
-https://github.com/sam-stikeleather
+Sam Stikeleather - https://github.com/sam-stikeleather
+Jake Baz - https://github.com/uppishdonkey
+Katie Bolick - https://github.com/C-Bolick
 
-https://github.com/uppishdonkey
+## License
+
+N/A
+
+[!Alt text](<image.png>)
