@@ -40,12 +40,20 @@ h6 {
 
 nav {
   background-color: white;
+  border-radius: 5rem;
+  margin-top: 10px;
+  position: absolute;
 }
 
 h1 {
-  font-size: 2.5rem;
+  padding: 10px;
   background-color: white;
-  text-decoration: underline;
+  margin-left: 1%;
+  margin-top: 10px;
+  width: 30%;
+  font-size: 29px;
+  text-align: end;
+  border-radius: 5rem;
 }
 
 h2 {
@@ -55,7 +63,7 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
-  background-color: white
+  background-color: white;
 }
 
 h4 {
@@ -68,7 +76,6 @@ h5 {
 
 h6 {
   font-size: 1rem;
-  background-color: purple;
 }
 
 p {
@@ -97,17 +104,17 @@ header a {
 button {
   font-size: 1rem;
   text-decoration: none;
-  padding: 0.25rem 1rem;
+  padding: 5px;
   border-radius: .5rem;
-  border: none;
-  outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 0 2px;
   background-color: #A8E9F9;
+  box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2),
+                0px 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 button:hover {
-  opacity: .8;
+  background-color: white;
 }
 
 button[disabled] {
@@ -142,11 +149,12 @@ input:focus {
 }
 
 .container {
-  width: 85%;
-  max-width: 1200px;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   background-color: #A8E9F9;
+  border-radius: 2rem;
+  margin-bottom: 10px;
 }
 
 .flex-row {
@@ -173,13 +181,11 @@ input:focus {
 }
 
 .my-1 {
-  margin-top: var(--spacing-one);
-  margin-bottom: var(--spacing-one);
+  padding: 10px;
 }
 
 .my-2 {
-  margin-top: var(--spacing-two);
-  margin-bottom: var(--spacing-two);
+  padding: 10px;
 }
 
 .px-1 {
@@ -211,6 +217,10 @@ input:focus {
 
 .error-text {
   color: red;
+}
+
+.currentCategory {
+  padding: 10px;
 }
 
 @media screen and (max-width: 768px) {
