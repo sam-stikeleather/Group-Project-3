@@ -24,4 +24,4 @@ Katie Bolick - https://github.com/C-Bolick
 
 N/A
 
-[!Alt text](<image.png>)
+![Alt text](<image.png>)
